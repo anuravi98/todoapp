@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h2 class="todo_list_title"><%= @todo.content %></h2>
+<p class="todo_list_sub_title"><%= @todo.status%></p>
+<div class="links">
+<%= link_to 'Edit', edit_todo_path(@todo) %> |
+<%= link_to 'Back', todos_path %>
+</div>

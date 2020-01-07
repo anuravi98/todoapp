@@ -1,0 +1,30 @@
+<title>Todo</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if user_signed_in? %>
+<div class="container">
+
+<p class="todo_list_title">
+Welcome <%=current_user.email%>
+</p >
+<div class="links">
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>   
+  </div>     
+
+
+</div>
+<% end %>
+<br>
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+<div class="container">
+<%= render 'layouts/messages' %>
+    <%= yield %>
+   </div>
+</body>
+</html>
