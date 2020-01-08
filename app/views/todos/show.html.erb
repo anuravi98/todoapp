@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
-
-<h2 class="todo_list_title"><%= @todo.content %></h2>
+<div class="row clearfix">
+<h2 class="todo_list_title"><%= @todo.content %></h2><br>
 <p class="todo_list_sub_title"><%= @todo.status%></p>
-<div class="links">
-<%= link_to 'Edit', edit_todo_path(@todo) %> |
-<%= link_to 'Back', todos_path %>
+<%= link_to '<button class="button button2">Edit</button>'.html_safe, edit_todo_path(@todo) %>
+<%= link_to '<button class="button button2">Back</button>'.html_safe, todos_path %>
 </div>

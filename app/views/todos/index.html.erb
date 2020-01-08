@@ -3,22 +3,37 @@
 <div class="title">
 <h1 class="todo_list_title"> ADD YOUR TODO<h1>
 </div>
-<br>
+
+<%= form_tag destroy_multiple_todos_path, method: :delete do %>
+<div class="row clearfix">
+<table id="customers">
+
+<thead>
+<tr>
+  <th>Content</th>
+  <th>Status</th>
+  <th>Actions</th>
+  <th data-sort-ignore="true"><input type="checkbox" id="selectAll"></input></th>
+</tr>
+</thead>
+<tbody>
 <% @todos.each do |todo| %>
 <% if todo.user == current_user %>
-
-<div class="index_row clearfix">
-  <h2 class="todo_list_title"><%= todo.content %></h2>
-  <p class="todo_list_sub_title"><%= todo.status %></p>
-  <div class="links">
-  <%= link_to 'Edit', edit_todo_path(todo) %> |
-  <%= link_to 'Delete', todo_path(todo), method: :delete, data: { confirm: "Are you sure?" } %> 
-  </div>
-</div>
-<%end%>
-
-<%end%>
-
-<div class="links">
-  <%= link_to "New Todo", new_todo_path %>
+  <tr>
+    <td><%= todo.content%></td>
+    <td><%= todo.status %></td>
+    <td>
+  <%= link_to edit_todo_path(todo) do %>
+    <%= fa_icon "pencil" %>
+<% end %>
+  </td>
+    <td><%= check_box_tag "todo_ids[]", todo.id, false, class: 'selectable' %></td>
+  </tr>
+<% end %>
+<% end %>
+</tbody>
+</table><br><br>
+<%= submit_tag "Delete selected",class: "button button2" %>
+<% end %>
+<%= link_to '<button class="button button2">New Todo</button>'.html_safe, new_todo_path %>
 </div>

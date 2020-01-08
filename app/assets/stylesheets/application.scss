@@ -10,9 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
+ @import "font-awesome";
 
  $white_opaque: rgba(250, 250, 250, .3);
  $dark: rgb(41, 2, 41);
@@ -26,11 +28,11 @@ html {
 
 body {
  	height: 100%;
-  background: -webkit-linear-gradient(40deg, rgb(119, 35, 87) 10%, rgb(99, 34, 129) 100%);
-  background:    -moz-linear-gradient(40deg, rgb(119, 35, 87) 10%, rgb(99, 34, 129) 100%);
-  background:     -ms-linear-gradient(40deg, rgb(119, 35, 87) 10%, rgb(99, 34, 129) 100%);
-  background:      -o-linear-gradient(40deg, rgb(119, 35, 87) 10%, rgb(99, 34, 129) 100%);
-  background:         linear-gradient(40deg, rgb(119, 35, 87) 10%, rgb(99, 34, 129) 100%);
+  background: -webkit-linear-gradient(40deg, rgb(120, 141, 146) 10%, rgb(109, 148, 160) 100%);
+  background:    -moz-linear-gradient(40deg, rgb(120, 141, 146) 10%, rgb(109, 148, 160) 100%);
+  background:     -ms-linear-gradient(40deg, rgb(120, 141, 146) 10%, rgb(109, 148, 160) 100%);
+  background:      -o-linear-gradient(40deg, rgb(120, 141, 146) 10%, rgb(109, 148, 160) 100%);
+  background:         linear-gradient(40deg, rgb(120, 141, 146) 10%, rgb(109, 148, 160) 100%);
   font-family: 'Lato', sans-serif;
   text-align: center;
 }
@@ -67,8 +69,8 @@ body {
 	background: $white_opaque;
 	margin: 3em auto 0 auto;
 	border-radius: 7px;
-	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
-	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
+	-webkit-box-shadow: 0 0 4px 3px rgba(105, 121, 131, 0.3);
+	box-shadow: 0 0 4px 4px rgba(109, 135, 141, 0.03);
 	padding: 1em 0;
 }
 .todo_list_title {
@@ -107,7 +109,7 @@ body {
 .title
 {
 	padding: 1em;
-	border-bottom: 10px solid rgba(56, 5, 58, 0.281);
+	border-bottom: 10px solid rgba(103, 157, 167, 0.281);
 }
 
 #todo_items_wrapper {
@@ -185,19 +187,21 @@ textarea {
 	height: 200px;
 }
 input[type="submit"] {
-	background: white;
-	outline: none;
+	background-color: white; ; /* Green */
 	border: none;
-	height: 40px;
-	border-radius: 4px;
-	width: 25%;
-	display: inline-block;
-	transition: all .4s ease-in-out;
+	color: black; 
+	padding: 4px 8px;
+	text-align: center;
+	text-decoration: none;
+	
+	font-size: 16px;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
 	cursor: pointer;
-	color: $dark;
 	&:hover {
-		background: $dark;
-		color: white;
+		background-color: #4CAF50;
+  color: white;
 	}
 }
 ::-webkit-input-placeholder { color: $dark; }
@@ -207,7 +211,7 @@ input[type="submit"] {
     border-color: #eed3d7;
     color: #b94a48;
 	text-align: center;
-	width: 50%;
+	width: 100%;
  }
 
 .alert-alert {
@@ -215,7 +219,7 @@ input[type="submit"] {
     border-color: #eed3d7;
     color: #b94a48;
 	text-align: center;
-	width: 50%;
+	width: 100%;
  }
 
 .alert-success {
@@ -223,7 +227,7 @@ input[type="submit"] {
     border-color: #d6e9c6;
     color: #468847;
 	text-align: center;
-	width: 50%;
+	width: 100%;
  }
 
 .alert-notice {
@@ -231,8 +235,64 @@ input[type="submit"] {
     border-color: #d6e9c6;
     color: #468847;
 	text-align: center;
-	width: 50%;
+	width: 100%;
  }
+ #customers {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+  }
+  
+  #customers td, #customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #4CAF50;
+	color: white;
+  }
+  .button {
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 4px 8px;
+	text-align: center;
+	text-decoration: none;
+	float: right;
+	font-size: 16px;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	cursor: pointer;
+  }
+  .button2 {
+  background-color: white; 
+  color: black; 
+  
+}
+
+.button2:hover {
+	background-color: #4CAF50;
+  color: white;
+}
+.button1 {
+	background-color: white; 
+	color: black; 
+	
+  }
+  
+  .button1:hover {
+	background-color: #4CAF50;
+	color: white;
+  }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

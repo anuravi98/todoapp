@@ -7,14 +7,15 @@
 </head>
 <body>
 <% if user_signed_in? %>
+<%= link_to('<button class="button button1">logout</button>'.html_safe, destroy_user_session_path, method: :delete) %>
 <div class="container">
-
 <p class="todo_list_title">
 Welcome <%=current_user.email%>
 </p >
-<div class="links">
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>   
-  </div>     
+
+
+    
+  
 
 
 </div>

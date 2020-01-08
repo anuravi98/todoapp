@@ -63,6 +63,14 @@ class TodosController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def destroy_multiple
+    DeleteMultipleWorker.perform_async(params[:todo_ids])
+    UserMailer.send_email(@user.email)
+    respond_to do |format|
+      format.html { redirect_to todos_url }
+      format.json { head :no_content }
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

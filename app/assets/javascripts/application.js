@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require select_all.js
+$(function() {
+    $("#selectAll").select_all();
+  });
