@@ -65,7 +65,7 @@ class TodosController < ApplicationController
   end
   def destroy_multiple
     DeleteMultipleWorker.perform_async(params[:todo_ids])
-    UserMailer.send_email(@user.email)
+    UserMailer.deletion_confirmation(current_user).deliver_now
     respond_to do |format|
       format.html { redirect_to todos_url }
       format.json { head :no_content }

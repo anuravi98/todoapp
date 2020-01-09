@@ -46,6 +46,9 @@ group :development do
   gem 'select_all-rails'
   gem 'sidekiq'
   gem 'sinatra'
+  gem "devise-async"
   gem 'tilt', '~> 1.4.1'
+  
+gem "launchy"
 end
 
