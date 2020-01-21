@@ -6,7 +6,14 @@ FactoryBot.define do
       password_confirmation { "password" }
       
     end
+    factory :todo do |f|
+      f.content { "aker::Name.first_name" }
+    end
+    factory :invalid_todo, parent: :todo do |f|
+      f.content {nil}
+    end
   end
+  
 module ControllerMacros
   def login_user
       before(:each) do
